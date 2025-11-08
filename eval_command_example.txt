@@ -1,0 +1,7 @@
+python -m src.predict \
+  --dataset Test \
+  --model_name meta-llama/Llama-3.2-1B \
+  --checkpoint_path "tinker://f38827af-a75f-48ef-b1db-cb55077e254c/sampler_weights/arcagi_Llama-3.2-1B_run2-000400" \
+  --max_tokens 28000 \
+  --max_output_tokens 4000 \
+  --example_count 3

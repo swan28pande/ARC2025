@@ -1,0 +1,38 @@
+1. Problem augmentation for train challenge - 
+python3 -m src.problem_augmentation \                       
+  --base_dir data/arc-agi-2025/raw \
+  --challenges_filename arc-agi_training_challenges.json \  
+  --solutions_filename arc-agi_training_solutions.json \  
+  --save_base_dir data/arc-agi-2025/problem_augmented
+
+2. Process eval challenges - 
+python3 -m src.problem_augmentation \                       
+  --base_dir data/arc-agi-2025/raw \
+  --challenges_filename arc-agi_evaluation_challenges.json \
+  --solutions_filename arc-agi_evaluation_solutions.json \
+  --save_base_dir data/arc-agi-2025/processed_data_for_eval \
+--eval_dataset
+
+3. Process test challenges - 
+python3 -m src.problem_augmentation \                       
+  --base_dir data/arc-agi-2025/raw \
+  --challenges_filename arc-agi_test_challenges.json \
+  --save_base_dir data/arc-agi-2025/processed_data_for_eval \
+--test_dataset
+
+
+4. Evaluate Evaluation challenges-
+python -m src.predict \
+  --dataset Evaluation \
+  --model_name meta-llama/Llama-3.3-70B-Instruct \
+  --checkpoint_path "tinker://de38597d-e8fe-4142-adaa-c7ed34f90cba/sampler_weights/arcagi_llama-3.3-70b-instruct-000075" \
+  --max_tokens 28000\
+  --max_output_tokens 4000
+
+5. Prediction for test challenges-
+python -m src.predict \
+  --dataset Test \
+  --model_name meta-llama/Llama-3.3-70B-Instruct \
+  --checkpoint_path "tinker://de38597d-e8fe-4142-adaa-c7ed34f90cba/sampler_weights/arcagi_llama-3.3-70b-instruct-000075" \
+  --max_tokens 28000\
+  --max_output_tokens 4000
