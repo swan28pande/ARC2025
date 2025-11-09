@@ -1,29 +1,3 @@
-# Data Augmentation for ARC-AGI
-
-## To Do
-- [ ] Build Data Visualizer  
-- [ ] Increase Examples  
-  - Rotate input–output by **90°, 180°, 270°**  
-  - Change colors  
-  - Flip both input and output  
-
-### Problem Additions
-- Rotate only input  
-- Rotate only output  
-- Horizontal flip  
-- Vertical flip  
-- Scaling  
-
-### Explore Other Datasets
-- Original ARC dataset — **800 tasks**  
-- Michael Hodel's RE-ARC dataset — **400 tasks**  
-- Simon Strandgaard's PQA dataset — **7 tasks**  
-- Simon Strandgaard's Tama dataset — **50 tasks**  
-- Mini-ARC — **149 tasks**  
-- nosound's handcrafted ARC tasks — **9 tasks**  
-- Andy Penrose's tasks — **5 tasks**  
-
----
 
 ## Data Augmentation Pipeline
 
